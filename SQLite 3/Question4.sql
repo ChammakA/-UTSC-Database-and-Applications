@@ -84,5 +84,3 @@ SELECT E.ename
 FROM Employee E, Certified C, Aircraft A
 WHERE A.cruisingrange > 3000 and A.aname = 'Boeing' and E.eid = C.eid and C.aid = A.aid
 
--- Question 2 vi
-SELECT 
