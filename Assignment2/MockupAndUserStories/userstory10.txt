@@ -1,0 +1,1 @@
+A student/user should be able to view/download the course calendar.

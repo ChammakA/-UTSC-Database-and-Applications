@@ -1,0 +1,1 @@
+A student/user should be able to click on the Labs and be able to view the topics by week as well as access the links to the handout and solutions.

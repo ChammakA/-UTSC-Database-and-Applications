@@ -1,0 +1,1 @@
+A student/user should be able to click on the Course Team tab to view the Instructors and Teaching Assistants.

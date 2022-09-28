@@ -1,0 +1,1 @@
+As a student/user, I should be able to click on the Home tab and see the Course Description, Instructor, Lecture times, etc 

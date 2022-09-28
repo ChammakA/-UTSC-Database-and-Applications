@@ -1,0 +1,1 @@
+A student/user should be able to click on the Markus tab and be directed to the course Markus page.

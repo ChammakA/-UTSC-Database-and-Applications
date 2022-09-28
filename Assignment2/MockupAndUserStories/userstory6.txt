@@ -1,0 +1,1 @@
+A student/user should be able to click on the Assignments tab and view all the assignments and be able to access the assignment's PDFs.

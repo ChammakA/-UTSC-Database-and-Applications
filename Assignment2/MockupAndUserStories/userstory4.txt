@@ -1,0 +1,1 @@
+A student/user should be able to click on the Lectures tab and view the week's lectures, topics, slides, etc.

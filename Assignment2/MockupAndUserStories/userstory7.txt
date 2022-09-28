@@ -1,0 +1,1 @@
+A student/user should be able to click on the Piazza tab and should be directed to the appropriate link.
