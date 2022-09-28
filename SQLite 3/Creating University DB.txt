@@ -1,0 +1,77 @@
+CREATE TABLE IF NOT EXISTS department (
+    DepartmentId INTEGER NOT NULL PRIMARY KEY,  
+    dept_name NVARCHAR(50) NOT NULL,
+    building NVARCHAR(15),
+    budget INTEGER CHECK(budget > 0)
+); 
+ 
+INSERT INTO department VALUES(1, 'Biology', 'Watson', 90000);
+INSERT INTO department VALUES(2, 'Comp. Sci.', 'Taylor', 100000);
+INSERT INTO department VALUES(3, 'Elec. Eng.', 'Taylor', 85000);
+INSERT INTO department VALUES(4, 'Finance', 'Painter', 120000);
+INSERT INTO department VALUES(5, 'History', 'Painter', 50000);
+INSERT INTO department VALUES(6, 'Music', 'Packard', 80000);
+INSERT INTO department VALUES(7, 'Physics', 'Watson', 90000);
+
+CREATE TABLE IF NOT EXISTS student (  
+    StudentId NVARCHAR(5) PRIMARY KEY NOT NULL,  
+    name NVARCHAR(50) NOT NULL,
+    DepartmentId NVARCHAR(50),
+    tot_cred INTEGER,
+    FOREIGN KEY(DepartmentId) REFERENCES department(DepartmentId)
+); 
+ 
+INSERT INTO student VALUES(00128, 'Zhang', 2, 102);
+INSERT INTO student VALUES(12345, 'Shankar', 2, 32);
+INSERT INTO student VALUES(19991,'Brandt', 5, 80);
+INSERT INTO student VALUES(23121, 'Chavez', 4, 110);
+INSERT INTO student VALUES(44553, 'Peltier', 7, 56);
+INSERT INTO student VALUES(45678, 'Levy', 7, 46);
+INSERT INTO student VALUES(54321, 'Williams', 2, 54);
+INSERT INTO student VALUES(55739, 'Sanchez', 6, 38);
+INSERT INTO student VALUES(70557, 'Snow', 7, 0);
+INSERT INTO student VALUES(76543, 'Brown', 2, 58);
+INSERT INTO student VALUES(76653, 'Aoi', 3, 60);
+INSERT INTO student VALUES(98765, 'Bourikas', 3, 98);
+INSERT INTO student VALUES(98988, 'Tanaka', 1, 120);
+INSERT INTO student VALUES(98980, 'Brian', NULL, 40);
+INSERT INTO student VALUES(98989, 'Purva', NULL, 60);
+
+
+CREATE TABLE IF NOT EXISTS test (
+    TestId INTEGER NOT NULL PRIMARY KEY,
+    Name NVARCHAR(50) NOT NULL,
+    Date DATE NULL
+);
+INSERT INTO test VALUES(1, 'Mid Term Comp. Sci. Exam', '2020-10-18');
+INSERT INTO test VALUES(2, 'Mid Term Physics Exam', '2020-10-23');
+INSERT INTO test VALUES(3, 'Mid Term History Exam', '2020-10-12');
+INSERT INTO test VALUES(4, 'Mid Term Elec. Eng. Exam', '2020-10-15');
+INSERT INTO test VALUES(5, 'Mid Term Biology Exam', '2020-10-17');
+INSERT INTO test VALUES(6, 'Mid Term Finance Exam', '2020-10-08');
+INSERT INTO test VALUES(7, 'Mid Term Music Exam', '2020-10-09');
+INSERT INTO test VALUES(8, 'Mid Term Chemistry Exam', '2020-10-22');
+INSERT INTO test VALUES(9, 'Mid Term Psychology Exam', '2020-10-15');
+
+CREATE TABLE IF NOT EXISTS mark (  
+    MarkId INTEGER NOT NULL PRIMARY KEY,
+    TestId INTEGER NOT NULL,
+    StudentId INTEGER  NOT NULL,  
+    mark INTEGER  NULL,
+    FOREIGN KEY(StudentId) REFERENCES student(StudentId),
+    FOREIGN KEY(TestId) REFERENCES test(TestId) 
+);  
+
+INSERT INTO mark VALUES(1, 1, 00128, 18);
+INSERT INTO mark VALUES(2, 1, 12345, 20);
+INSERT INTO mark VALUES(3, 3, 19991, 16);
+INSERT INTO mark VALUES(4, 6, 23121, 19);
+INSERT INTO mark VALUES(5, 2, 44553, 14);
+INSERT INTO mark VALUES(6, 2, 45678, 20);
+INSERT INTO mark VALUES(7, 1, 54321, 20);
+INSERT INTO mark VALUES(8, 7, 55739, 20);
+INSERT INTO mark VALUES(9, 2, 70557, 18);
+INSERT INTO mark VALUES(10, 1, 76543, 12);
+INSERT INTO mark VALUES(11, 4, 76653, 13);
+INSERT INTO mark VALUES(12, 4, 98765, 17);
+INSERT INTO mark VALUES(13, 5, 98988, 20);
